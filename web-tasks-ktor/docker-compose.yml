@@ -1,0 +1,15 @@
+version: '1'
+services:
+  db-task:
+    container_name: db-task
+    image: postgres:15.2
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: db-task
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    ports:
+      - 5431:5432
+    expose:
+      - 5432
+    command: -p 5432
